@@ -1,0 +1,60 @@
+let awesome = ["Papuchon", "curry", ":)"] 
+let alsoAwesome = ["Quake", "The Simons"] 
+let allAwesome = [awesome, alsoAwesome]
+
+1. length :: Foldable t => t a -> Int
+           - Takes 1 Foldable argument.
+           - Returns an Int.
+2a. 5
+2b. 3
+2c. 2
+2d. 5 
+3.  6 / length [1, 2, 3] will cause an error because it does not       implement the typeclass Fractional. The function length            returns the type Int.
+4.  div 6 (length [1, 2, 3])
+5.  The type of the expression is Eq. We should expect True, Bool      data constructor, as a result.
+6.  The type is Eq. We should expect False, Bool data constructor,     as a result.
+7.  length allAwesome == 2
+        - Reduces to True. This works because the value reduced from length is an Int. Int is an instance of the Eq typeclass.
+    length [1, 'a', 3, 'b']
+        - This will result in in an error because types inside a list must be the same type.
+    length allAwesome + length awesome
+        - Will reduce to 5. This works because both reduce to type Int.
+    (8 == 8) && ('b' < 'a')
+        - This will result in False. For logical conjuction both expressions must evaluate to True.
+    (8 == 8) && 9
+        - This will result in False. The logical conjuction function takes two arguments that are type Bool.
+9.  isPalindrome :: (Eq a) => [a] -> Bool
+    isPalindrome x = if (reverse x == x) then True else False
+    -- see isPalindrome.hs
+    -- Book answer: isPalindrome x = x == reverse x
+10. myAbs :: Integer -> Integer
+    myAbs x = if (x < 0) then abs x else x
+    -- Book answer: myAbs x = if (x < 0) then (negate x) else x
+11. f :: (a, b) -> (c, d) -> ((b, d), (a, c))
+    f x y = grandTuple
+        where grandTuple = (first, second)
+              first = (snd x, snd y)  
+              second = (fst x, fst y)
+    -- see pairFunction.hs
+    -- Book answer: f x y = ((snd x, snd y), (fst x, fst y))
+
+
+
+Reading Syntax
+-- see readingSyntax.hs
+1. x = (+)
+    f xs = x w 1
+        where w = length xs
+2. (\x = x)
+    -- Book answer: id x = x
+3. (\(x:xs) -> x)
+    -- Book answer: f (x:xs) = x
+4. f a = fst a
+   -- Book answer: f (a, b) = a
+
+
+Match the function names to their types
+1. c
+2. b
+3. a
+4. d

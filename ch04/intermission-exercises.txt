@@ -1,0 +1,21 @@
+- Intermission Exercises Part 1
+   data Mood = Blah | Woot deriving Show
+1. The type constructor is Mood.
+2. The values for this data declaration are Blah and Woot.
+3. The type signature should reference the type constructor not the data constructors / values.
+4. changeMood Blah = Woot
+   changeMood Woot = Blah
+   -- Note from the Book's answer section: "The underscore is an “otherwise” case that will catch any other inputs that aren’t Blah"
+5. See changemood.hs
+
+
+- Intermission Exercises Part 2
+1. not True && True
+2. not (x == 6)
+3. (1 * 2) > 5
+4. ["Merry"] > ["Happy"]
+4b. Book answer - "Merry" > "Happy"
+Note -  (++) :: [a] -> [a] -> [a]. 
+        Arguments must have the same type.
+5a. "123" ++ "look at me!"
+5b. ["1", "2", "3"] ++ ["l","o","o","k"," ","a","t"," ","m","e","!"]
